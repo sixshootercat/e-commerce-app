@@ -11,7 +11,6 @@ import Header from "./components/header/Header";
 import SignInPage from "./pages/signin-page/SignInPage";
 
 class App extends React.Component {
-
   unsubscribeFromAuth = null;
 
   componentDidMount() {
@@ -26,7 +25,8 @@ class App extends React.Component {
             ...snapShot.data()
           });
         });
-      } setCurrentUser(userAuth);
+      }
+      setCurrentUser(userAuth);
     });
   }
 
@@ -45,7 +45,7 @@ class App extends React.Component {
             exact
             path="/signin"
             render={() =>
-              this.currentUser ? <Redirect to="/" /> : <SignInPage />
+              this.props.currentUser ? <Redirect to="/" /> : <SignInPage />
             }
           />
         </Switch>
