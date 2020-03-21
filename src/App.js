@@ -16,6 +16,7 @@ class App extends React.Component {
 
   componentDidMount() {
     const { setCurrentUser } = this.props;
+
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
@@ -26,7 +27,8 @@ class App extends React.Component {
             ...snapShot.data()
           });
         });
-      } setCurrentUser(userAuth);
+      } 
+      setCurrentUser(userAuth);
     });
   }
 
@@ -45,7 +47,7 @@ class App extends React.Component {
             exact
             path="/signin"
             render={() =>
-              this.currentUser ? <Redirect to="/" /> : <SignInPage />
+              this.props.currentUser ? <Redirect to="/" /> : <SignInPage />
             }
           />
         </Switch>
