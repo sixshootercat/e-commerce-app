@@ -3,7 +3,7 @@ import "./shop.scss";
 import SHOP_DATA from "./shop.data";
 import CollectionPreview from "../../components/collection-preview/CollectionPreview";
 
-class ShopPage extends Component {
+class Shop extends Component {
   constructor(props) {
     super(props);
 
@@ -25,4 +25,4 @@ class ShopPage extends Component {
   }
 }
 
-export default ShopPage;
+export default Shop;
