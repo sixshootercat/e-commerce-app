@@ -2,7 +2,19 @@ import { createSelector } from "reselect";
 
 const selectShop = state => state.shop;
 
-export const selectShopCollections = createSelector(
+export const selectCollections = createSelector(
   [selectShop],
   shop => shop.collections
 );
+
+// Selector to convert an object into an array
+export const selectCollectionsForPreview = createSelector(
+  [selectCollections],
+  collections => Object.keys(collections).map(key => collections[key])
+);
+
+export const selectCollection = collectionUrlParam =>
+  createSelector(
+    [selectCollections],
+    collections => collections[collectionUrlParam]
+  );
