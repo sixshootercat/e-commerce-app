@@ -37,6 +37,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
+// Function to add documents to firestore db
 export const addCollectionAndDocuments = async (
   collectionKey,
   objectsToAdd
@@ -50,6 +51,24 @@ export const addCollectionAndDocuments = async (
   });
 
   await batch.commit();
+};
+
+export const convertCollectionSnapshotToMap = collectionsSnapshot => {
+  const transformedCollection = collectionsSnapshot.docs.map(docSnaphot => {
+    const { title, items } = docSnaphot.data();
+
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      id: docSnaphot.id,
+      title,
+      items
+    };
+  });
+
+  return transformedCollection.reduce((accumulator, collection) => {
+    accumulator[collection.title.toLowerCase()] = collection;
+    return accumulator;
+  }, {});
 };
 
 // Initialize Firebase
