@@ -1,15 +1,15 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
 
 var firebaseConfig = {
-  apiKey: "AIzaSyAFQQQ8mjB_Kk1dbx-y3M-2uFCDtcr6FDc",
-  authDomain: "crown-e-commerce.firebaseapp.com",
-  databaseURL: "https://crown-e-commerce.firebaseio.com",
-  projectId: "crown-e-commerce",
-  storageBucket: "crown-e-commerce.appspot.com",
-  messagingSenderId: "4035693984",
-  appId: "1:4035693984:web:ad3cf71a60704cff8568c5"
+  apiKey: 'AIzaSyAFQQQ8mjB_Kk1dbx-y3M-2uFCDtcr6FDc',
+  authDomain: 'crown-e-commerce.firebaseapp.com',
+  databaseURL: 'https://crown-e-commerce.firebaseio.com',
+  projectId: 'crown-e-commerce',
+  storageBucket: 'crown-e-commerce.appspot.com',
+  messagingSenderId: '4035693984',
+  appId: '1:4035693984:web:ad3cf71a60704cff8568c5',
 };
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
@@ -27,10 +27,10 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
         displayName,
         email,
         createdAt,
-        ...additionalData
+        ...additionalData,
       });
     } catch (err) {
-      console.log("error creating user", err.message);
+      console.log('error creating user', err.message);
     }
   }
 
@@ -61,7 +61,7 @@ export const convertCollectionSnapshotToMap = collectionsSnapshot => {
       routeName: encodeURI(title.toLowerCase()),
       id: docSnaphot.id,
       title,
-      items
+      items,
     };
   });
 
@@ -78,7 +78,7 @@ export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
 const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: "select_account" });
+provider.setCustomParameters({ prompt: 'select_account' });
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;
