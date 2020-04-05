@@ -1,12 +1,12 @@
-import { createStore, applyMiddleware } from "redux";
-import logger from "redux-logger";
-import { persistStore } from "redux-persist";
+import { createStore, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
+import { persistStore } from 'redux-persist';
 
-import rootReducer from "./reducers/rootReducer";
+import rootReducer from './reducers/rootReducer';
 
 const middlewares = [];
 
-if (process.env.NODE_ENV === "development") {
+if (process.env.NODE_ENV === 'development') {
   middlewares.push(logger);
 }
 

@@ -1,7 +1,7 @@
-import { shopActionTypes } from "../action-types/shopActionTypes";
+import { shopActionTypes } from '../action-types/shopActionTypes';
 
 const initialState = {
-  collections: null
+  collections: null,
 };
 
 const shopReducer = (state = initialState, action) => {
@@ -9,7 +9,7 @@ const shopReducer = (state = initialState, action) => {
     case shopActionTypes.UPDATE_COLLECTIONS:
       return {
         ...state,
-        collections: action.payload
+        collections: action.payload,
       };
     default:
       return state;
