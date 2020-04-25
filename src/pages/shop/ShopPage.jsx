@@ -2,8 +2,6 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import './shop.scss';
-
 import { fetchCollectionsStartAsync } from '../../redux/actions/shopActions';
 
 import CollectionOverviewContainer from '../../components/collections-overview/CollectionOverviewContainer';
@@ -19,7 +17,7 @@ class ShopPage extends React.Component {
     const { match } = this.props;
 
     return (
-      <div className='shop-page'>
+      <>
         <Route
           exact
           path={`${match.path}`}
@@ -29,7 +27,7 @@ class ShopPage extends React.Component {
           path={`${match.path}/:collectionId`}
           component={CollectionPageContainer}
         />
-      </div>
+      </>
     );
   }
 }
