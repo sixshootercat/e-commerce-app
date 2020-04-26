@@ -1,7 +1,7 @@
 import React from 'react';
-import FormInput from '../form-input/FormInput';
-import CustomButton from '../custom-button/CustomButton';
-import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
+import FormInput from 'components/form-input/FormInput';
+import CustomButton from 'components/custom-button/CustomButton';
+import { auth, createUserProfileDocument } from 'firebase/firebase.utils';
 import './sign-up.scss';
 
 class SignUp extends React.Component {
@@ -16,7 +16,7 @@ class SignUp extends React.Component {
     };
   }
 
-  handleSubmit = async e => {
+  handleSubmit = async (e) => {
     e.preventDefault();
 
     const { displayName, email, password, confirmPassword } = this.state;
@@ -45,7 +45,7 @@ class SignUp extends React.Component {
     }
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     const { value, name } = e.target;
 
     this.setState({ [name]: value });

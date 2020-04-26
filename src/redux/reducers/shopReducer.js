@@ -1,4 +1,4 @@
-import { shopActionTypes } from '../action-types/shopActionTypes';
+import { shopActionTypes } from 'redux/action-types/shopActionTypes';
 
 const initialState = {
   collections: null,

@@ -3,10 +3,10 @@ import { Route, useRouteMatch } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
 
-import { fetchCollectionsStartAsync } from '../../redux/actions/shopActions';
+import { fetchCollectionsStartAsync } from 'redux/actions/shopActions';
 
-import CollectionOverviewContainer from '../../components/collections-overview/CollectionOverviewContainer';
-import CollectionPageContainer from '../../pages/collection/CollectionPageContainer';
+import CollectionOverviewContainer from 'components/collections-overview/CollectionOverviewContainer';
+import CollectionPageContainer from 'pages/collection/CollectionPageContainer';
 
 const ShopPage = () => {
   const match = useRouteMatch();

@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
-import WithSpinner from '../../components/with-spinner/WithSpinner';
+import WithSpinner from 'components/with-spinner/WithSpinner';
 import CollectionPage from './CollectionPage';
-import { selectIsCollectionsLoaded } from '../../redux/selectors/shopSelectors';
+import { selectIsCollectionsLoaded } from 'redux/selectors/shopSelectors';
 
 const mapStateToProps = createStructuredSelector({
   isLoading: (state) => !selectIsCollectionsLoaded(state),
