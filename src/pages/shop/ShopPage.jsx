@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { Route, useRouteMatch } from 'react-router-dom';
-
 import { useDispatch } from 'react-redux';
 
-import { fetchCollectionsStartAsync } from 'redux/actions/shopActions';
+import { fetchCollectionsStart } from 'redux/actions/shopActions';
 
 import CollectionOverviewContainer from 'components/collections-overview/CollectionOverviewContainer';
 import CollectionPageContainer from 'pages/collection/CollectionPageContainer';
@@ -13,7 +12,7 @@ const ShopPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCollectionsStartAsync());
+    dispatch(fetchCollectionsStart());
   }, []);
 
   return (
