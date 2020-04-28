@@ -1,5 +1,5 @@
-import { cartActionTypes } from '../action-types/cartActionTypes';
-import { addItemToCart, removeItemFromCart } from '../cart.utils';
+import { cartActionTypes } from 'redux/action-types/cartActionTypes';
+import { addItemToCart, removeItemFromCart } from 'redux/cart.utils';
 
 const initialState = {
   hidden: true,
@@ -22,7 +22,7 @@ const cartReducer = (state = initialState, action) => {
       return {
         ...state,
         cartItems: state.cartItems.filter(
-          cartItem => cartItem.id !== action.payload.id
+          (cartItem) => cartItem.id !== action.payload.id
         ),
       };
     case cartActionTypes.REMOVE_ITEM:
