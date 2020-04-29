@@ -37,6 +37,15 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = auth.onAuthStateChanged(userAuth => {
+      unsubscribe();
+      resolve(userAuth);
+    }, reject);
+  });
+};
+
 // Function to add documents to firestore db to not do it manually
 export const addCollectionAndDocuments = async (
   collectionKey,
@@ -45,7 +54,7 @@ export const addCollectionAndDocuments = async (
   const collectionRef = firestore.collection(collectionKey);
 
   const batch = firestore.batch();
-  objectsToAdd.forEach((obj) => {
+  objectsToAdd.forEach(obj => {
     const newDocRef = collectionRef.doc();
     batch.set(newDocRef, obj);
   });
@@ -53,8 +62,8 @@ export const addCollectionAndDocuments = async (
   await batch.commit();
 };
 
-export const convertCollectionSnapshotToMap = (collectionsSnapshot) => {
-  const transformedCollection = collectionsSnapshot.docs.map((docSnaphot) => {
+export const convertCollectionSnapshotToMap = collectionsSnapshot => {
+  const transformedCollection = collectionsSnapshot.docs.map(docSnaphot => {
     const { title, items } = docSnaphot.data();
 
     return {
