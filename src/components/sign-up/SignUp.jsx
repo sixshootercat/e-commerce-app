@@ -4,16 +4,18 @@ import CustomButton from 'components/custom-button/CustomButton';
 import { auth, createUserProfileDocument } from 'firebase/firebase.utils';
 import './sign-up.scss';
 
-const SignUp = () => {
+const SignUp = props => {
   const [userCreds, setUserCreds] = useState({
-    displayName: '',
     email: '',
+    displayName: '',
     password: '',
     confirmPassword: '',
   });
 
   const handleSubmit = async e => {
     e.preventDefault();
+
+    const { displayName, email, password, confirmPassword } = userCreds;
 
     if (password !== confirmPassword) {
       alert("passwords don't match");
