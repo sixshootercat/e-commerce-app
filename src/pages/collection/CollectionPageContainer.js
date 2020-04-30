@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
-import WithSpinner from 'components/with-spinner/WithSpinner';
+import WithSpinner from 'hoc/with-spinner/WithSpinner';
 import CollectionPage from './CollectionPage';
 import { selectIsCollectionsLoaded } from 'redux/selectors/shopSelectors';
 
