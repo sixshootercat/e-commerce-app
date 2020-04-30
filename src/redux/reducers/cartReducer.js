@@ -1,5 +1,6 @@
 import { cartActionTypes } from 'redux/action-types/cartActionTypes';
 import { addItemToCart, removeItemFromCart } from 'redux/cart.utils';
+import { userActionTypes } from 'redux/action-types/userActionTypes';
 
 const initialState = {
   hidden: true,
@@ -29,6 +30,11 @@ const cartReducer = (state = initialState, action) => {
       return {
         ...state,
         cartItems: removeItemFromCart(state.cartItems, action.payload),
+      };
+    case userActionTypes.SIGN_OUT_SUCCESS:
+      return {
+        ...state,
+        cartItems: [],
       };
     default:
       return state;
