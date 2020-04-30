@@ -4,7 +4,7 @@ import CustomButton from 'components/custom-button/CustomButton';
 import { auth, createUserProfileDocument } from 'firebase/firebase.utils';
 import './sign-up.scss';
 
-const SignUp = (props) => {
+const SignUp = props => {
   const [userCreds, setUserCreds] = useState({
     email: '',
     displayName: '',
@@ -12,7 +12,7 @@ const SignUp = (props) => {
     confirmPassword: '',
   });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
 
     const { displayName, email, password, confirmPassword } = userCreds;
@@ -42,7 +42,7 @@ const SignUp = (props) => {
     }
   };
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     const { value, name } = e.target;
 
     setUserCreds({ ...userCreds, [name]: value });

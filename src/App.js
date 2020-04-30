@@ -11,7 +11,7 @@ import SignInSignUp from 'pages/sign-in-sign-up/SignInSignUpPage';
 import CheckOutPage from 'pages/checkout/CheckOutPage';
 import Header from 'components/header/Header';
 
-const App = (props) => {
+const App = props => {
   const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
 
