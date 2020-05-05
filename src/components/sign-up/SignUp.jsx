@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import FormInput from 'components/form-input/FormInput';
 import CustomButton from 'components/custom-button/CustomButton';
-import { auth, createUserProfileDocument } from 'firebase/firebase.utils';
+import { signUpStart } from 'redux/actions/userActions';
+
 import './sign-up.scss';
 
-const SignUp = props => {
+const SignUp = (props) => {
   const [userCreds, setUserCreds] = useState({
     email: '',
     displayName: '',
@@ -12,37 +14,22 @@ const SignUp = props => {
     confirmPassword: '',
   });
 
-  const handleSubmit = async e => {
+  const dispatch = useDispatch();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const { displayName, email, password, confirmPassword } = userCreds;
+
+    dispatch(signUpStart({ email, password, displayName }));
 
     if (password !== confirmPassword) {
       alert("passwords don't match");
       return;
     }
-
-    try {
-      const { user } = await auth.createUserWithEmailAndPassword(
-        email,
-        password
-      );
-
-      await createUserProfileDocument(user, { displayName });
-
-      setUserCreds({
-        ...userCreds,
-        displayName: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-      });
-    } catch (err) {
-      console.log(err);
-    }
   };
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     const { value, name } = e.target;
 
     setUserCreds({ ...userCreds, [name]: value });
