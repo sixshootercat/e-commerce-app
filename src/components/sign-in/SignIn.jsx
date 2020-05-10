@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import FormInput from 'components/form-input/FormInput';
 import CustomButton from 'components/custom-button/CustomButton';
@@ -11,19 +11,23 @@ const SignIn = () => {
     email: '',
     password: '',
   });
+
   const dispatch = useDispatch();
+
+  const inputEl = useRef();
+
+  useEffect(() => {
+    inputEl.current.focus();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     dispatch(emailSignInStart({ email, password }));
-
     setUserCreds({ ...userCreds, email: '', password: '' });
   };
 
   const handleChange = (e) => {
     const { value, name } = e.target;
-
     setUserCreds({ ...userCreds, [name]: value });
   };
 
@@ -36,6 +40,7 @@ const SignIn = () => {
 
       <form onSubmit={handleSubmit}>
         <FormInput
+          ref={inputEl}
           name='email'
           type='email'
           onChange={handleChange}
