@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import FormInput from 'components/form-input/FormInput';
 import CustomButton from 'components/custom-button/CustomButton';
@@ -35,8 +36,10 @@ const SignIn = () => {
 
   return (
     <div className='sign-in'>
-      <h2>I already have an account</h2>
-      <span>Sign in with your email and password</span>
+      <div className='title'>
+        <h2>Sign In</h2>
+        <span>Sign in with your email and password</span>
+      </div>
 
       <form onSubmit={handleSubmit}>
         <FormInput
@@ -56,6 +59,7 @@ const SignIn = () => {
           label='Password'
           required
         />
+
         <div className='buttons'>
           <CustomButton type='submit'> Sign in </CustomButton>
           <CustomButton
@@ -65,6 +69,14 @@ const SignIn = () => {
           >
             Sign in With Google
           </CustomButton>
+        </div>
+        <div className='sign-up-message'>
+          <span>
+            Dont have an account?{' '}
+            <Link to='/signup'>
+              <strong>Sign up Here</strong>
+            </Link>
+          </span>
         </div>
       </form>
     </div>

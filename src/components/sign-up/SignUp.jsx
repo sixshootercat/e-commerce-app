@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import FormInput from 'components/form-input/FormInput';
 import CustomButton from 'components/custom-button/CustomButton';
@@ -15,6 +15,12 @@ const SignUp = (props) => {
   });
 
   const dispatch = useDispatch();
+
+  const inputEl = useRef();
+
+  useEffect(() => {
+    inputEl.current.focus();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,10 +45,13 @@ const SignUp = (props) => {
 
   return (
     <div className='sign-up'>
-      <h2 className='title'>I do not have an account</h2>
-      <span>Sign up with your email and password</span>
+      <div className='title'>
+        <h2>I do not have an account</h2>
+        <span>Sign up with your email and password</span>
+      </div>
       <form className='sign-up-form' onSubmit={handleSubmit}>
         <FormInput
+          ref={inputEl}
           type='text'
           name='displayName'
           value={displayName}

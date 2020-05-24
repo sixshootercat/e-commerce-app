@@ -13,8 +13,8 @@ const HomePage = lazy(() => import('pages/home/HomePage'));
 const ShopPage = lazy(() => import('pages/shop/ShopPage'));
 const CheckOutPage = lazy(() => import('pages/checkout/CheckOutPage'));
 const ContactPage = lazy(() => import('pages/contact/ContactPage'));
-
 const SignInPage = lazy(() => import('pages/sign-in/SignInPage'));
+const SignUpPage = lazy(() => import('pages/sign-up/SignUpPage'));
 
 const App = () => {
   const currentUser = useSelector(selectCurrentUser);
@@ -39,6 +39,7 @@ const App = () => {
             path='/signin'
             render={() => (currentUser ? <Redirect to='/' /> : <SignInPage />)}
           />
+          <Route exact path='/signup' component={SignUpPage} />
           <Route path='*' component={PageNotFound} />
         </Switch>
       </Suspense>

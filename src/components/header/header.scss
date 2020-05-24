@@ -22,5 +22,19 @@
       padding: 10px 15px;
       cursor: pointer;
     }
+
+    .option::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 1px;
+      background: black;
+      transition: width 0.3s;
+    }
+
+    .option:hover::after {
+      width: 100%;
+      transition: width 0.3s;
+    }
   }
 }
