@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 
 import { fetchCollectionsStart } from 'redux/actions/shopActions';
 
-import CollectionOverviewContainer from 'components/collections-overview/CollectionOverviewContainer';
-import CollectionPageContainer from 'pages/collection/CollectionPageContainer';
+import CollectionOverviewContainer from 'hoc/CollectionOverviewContainer';
+import CollectionPageContainer from 'hoc/CollectionPageContainer';
 
 const ShopPage = () => {
   const match = useRouteMatch();
