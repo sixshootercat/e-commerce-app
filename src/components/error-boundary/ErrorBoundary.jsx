@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ErrorMessage } from './styles';
 
 class ErrorBoundary extends Component {
   constructor() {
@@ -20,9 +21,9 @@ class ErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div>
+        <ErrorMessage>
           <h1>There's been an error</h1>
-        </div>
+        </ErrorMessage>
       );
     }
     return this.props.children;
