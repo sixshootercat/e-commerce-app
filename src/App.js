@@ -8,6 +8,7 @@ import { checkUserSession } from 'redux/actions/userActions';
 import Header from 'components/header/Header';
 import Spinner from 'components/spinner/Spinner';
 import PageNotFound from 'components/page-not-found/PageNotFound';
+import ErrorBoundary from 'components/error-boundary/ErrorBoundary';
 
 const HomePage = lazy(() => import('pages/home/HomePage'));
 const ShopPage = lazy(() => import('pages/shop/ShopPage'));
@@ -27,22 +28,26 @@ const App = () => {
   return (
     <>
       <Header />
-      <Suspense fallback={<Spinner />}>
-        <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route path='/shop' component={ShopPage} />
-          <Route exact path='/checkout' component={CheckOutPage} />
-          <Route exact path='/contact' component={ContactPage} />
+      <ErrorBoundary>
+        <Suspense fallback={<Spinner />}>
+          <Switch>
+            <Route exact path='/' component={HomePage} />
+            <Route path='/shop' component={ShopPage} />
+            <Route exact path='/checkout' component={CheckOutPage} />
+            <Route exact path='/contact' component={ContactPage} />
 
-          <Route
-            exact
-            path='/signin'
-            render={() => (currentUser ? <Redirect to='/' /> : <SignInPage />)}
-          />
-          <Route exact path='/signup' component={SignUpPage} />
-          <Route path='*' component={PageNotFound} />
-        </Switch>
-      </Suspense>
+            <Route
+              exact
+              path='/signin'
+              render={() =>
+                currentUser ? <Redirect to='/' /> : <SignInPage />
+              }
+            />
+            <Route exact path='/signup' component={SignUpPage} />
+            <Route path='*' component={PageNotFound} />
+          </Switch>
+        </Suspense>
+      </ErrorBoundary>
     </>
   );
 };
