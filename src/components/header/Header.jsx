@@ -24,10 +24,10 @@ const Header = () => {
         <Logo className='logo' />
       </Link>
       <div className='options'>
-        <Link className='option ' to='/shop'>
+        <Link className='option' to='/shop'>
           SHOP
         </Link>
-        <Link className='option ' to='/contact'>
+        <Link className='option' to='/contact'>
           CONTACT
         </Link>
         {currentUser ? (
@@ -36,10 +36,10 @@ const Header = () => {
           </div>
         ) : (
           <>
-            <Link className='option ' to='/signin'>
+            <Link className='option' to='/signin'>
               SIGN IN
             </Link>
-            <Link className='option ' to='/signup'>
+            <Link className='option' to='/signup'>
               SIGN UP
             </Link>
           </>

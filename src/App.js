@@ -27,8 +27,8 @@ const App = () => {
 
   return (
     <>
-      <Header />
       <ErrorBoundary>
+        <Header />
         <Suspense fallback={<Spinner />}>
           <Switch>
             <Route exact path='/' component={HomePage} />
