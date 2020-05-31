@@ -17,3 +17,7 @@ a {
   text-decoration: none;
   color: black;
 }
+
+h2 {
+  font-size: 2rem;
+}

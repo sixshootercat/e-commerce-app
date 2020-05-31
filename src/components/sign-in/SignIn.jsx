@@ -38,7 +38,9 @@ const SignIn = () => {
     <div className='sign-in'>
       <div className='title'>
         <h2>Sign In</h2>
-        <span>Sign in with your email and password</span>
+        <span style={{ fontSize: '18px' }}>
+          Sign in with your email and password
+        </span>
       </div>
 
       <form onSubmit={handleSubmit}>

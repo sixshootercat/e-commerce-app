@@ -47,7 +47,9 @@ const SignUp = (props) => {
     <div className='sign-up'>
       <div className='title'>
         <h2>I do not have an account</h2>
-        <span>Sign up with your email and password</span>
+        <span style={{ fontSize: '18px' }}>
+          Sign up with your email and password
+        </span>
       </div>
       <form className='sign-up-form' onSubmit={handleSubmit}>
         <FormInput
