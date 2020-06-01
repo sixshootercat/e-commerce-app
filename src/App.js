@@ -44,7 +44,7 @@ const App = () => {
               }
             />
             <Route exact path='/signup' component={SignUpPage} />
-            <Route path='*' component={PageNotFound} />
+            <Route path='/' component={PageNotFound} />
           </Switch>
         </Suspense>
       </ErrorBoundary>
