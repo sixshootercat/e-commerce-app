@@ -18,4 +18,4 @@ CartItem.propTypes = {
   cartItem: PropTypes.object,
 };
 
-export default CartItem;
+export default React.memo(CartItem);
