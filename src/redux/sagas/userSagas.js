@@ -16,9 +16,13 @@ import {
   getCurrentUser,
 } from 'firebase/firebase.utils';
 
-export function* getSnapshotFromUserAuth(userAuth) {
+export function* getSnapshotFromUserAuth(userAuth, displayName) {
   try {
-    const userRef = yield call(createUserProfileDocument, userAuth);
+    const userRef = yield call(
+      createUserProfileDocument,
+      userAuth,
+      displayName
+    );
     const snapShot = yield userRef.get();
     yield put(signInSuccess({ id: snapShot.id, ...snapShot.data() }));
   } catch (error) {
