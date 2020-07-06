@@ -1,30 +1,34 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import CustomButton from 'components/custom-button/CustomButton';
 import { addItem } from 'redux/actions/cartActions';
-
-import './collection-item.scss';
+import {
+  CollectionFooter,
+  CollectionContainer,
+  CollectionName,
+  CollectionPrice,
+  ExtStyledButton,
+  Image,
+} from './styles';
 
 const CollectionItem = ({ item }) => {
   const dispatch = useDispatch();
   const { name, price, imageUrl } = item;
 
   return (
-    <div className='collection-item'>
-      <div
-        className='image'
-        style={{
-          backgroundImage: `url(${imageUrl})`,
-        }}
-      />
-      <div className='collection-footer'>
-        <span className='name'>{name}</span>
-        <span className='price'>${price}</span>
-      </div>
-      <CustomButton onClick={() => dispatch(addItem(item))} inverted>
+    <CollectionContainer>
+      <Image imageUrl={imageUrl} />
+      <CollectionFooter>
+        <CollectionName>{name}</CollectionName>
+        <CollectionPrice>${price}</CollectionPrice>
+      </CollectionFooter>
+      <ExtStyledButton
+        className='custom-button'
+        onClick={() => dispatch(addItem(item))}
+        inverted
+      >
         Add to Cart
-      </CustomButton>
-    </div>
+      </ExtStyledButton>
+    </CollectionContainer>
   );
 };
 
