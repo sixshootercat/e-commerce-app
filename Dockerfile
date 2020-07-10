@@ -1,19 +1,19 @@
 # pull official base image
-FROM node:13.12.0-alpine
+FROM mhart/alpine-node:11 AS builder
 
-# set working directory
 WORKDIR /app
 
-# install app dependencies
-COPY package.json ./
-
-RUN yarn install 
-
-# add app
 COPY . .
+RUN npm install react-scripts -g --silent
 
-# Uses port which is used by the actual application
-EXPOSE 8080
+RUN yarn install
+RUN yarn run build
 
-# start app
-CMD ["yarn", "start"]
+FROM mhart/alpine-node
+
+RUN yarn global add serve
+
+WORKDIR /app
+
+COPY --from=builder /app/build .
+CMD ["serve", "-n", "-p", "80", "-s", "."]doc
