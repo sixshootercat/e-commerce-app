@@ -3,6 +3,13 @@
   flex-direction: column;
   width: 380px;
 
+  .sign-up-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
   .title {
     display: flex;
     align-items: center;

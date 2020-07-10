@@ -1,7 +1,9 @@
-describe('App Component', () => {
+import React from 'react';
+import { App } from './App';
+import { render } from '@testing-library/react';
+
+describe('testing App component', () => {
   it('renders correctly without crashing', () => {
-    let num1,
-      num2 = 2;
-    let result = num1 + num2;
+    const { getByText } = render(<App />);
   });
 });

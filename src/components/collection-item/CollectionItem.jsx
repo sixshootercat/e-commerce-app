@@ -2,10 +2,10 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { addItem } from 'redux/actions/cartActions';
 import {
-  CollectionFooter,
-  CollectionContainer,
-  CollectionName,
-  CollectionPrice,
+  CollectionItemFooter,
+  CollectionItemContainer,
+  CollectionItemName,
+  CollectionItemPrice,
   ExtStyledButton,
   Image,
 } from './styles';
@@ -15,20 +15,16 @@ const CollectionItem = ({ item }) => {
   const { name, price, imageUrl } = item;
 
   return (
-    <CollectionContainer>
+    <CollectionItemContainer>
       <Image imageUrl={imageUrl} />
-      <CollectionFooter>
-        <CollectionName>{name}</CollectionName>
-        <CollectionPrice>${price}</CollectionPrice>
-      </CollectionFooter>
-      <ExtStyledButton
-        className='custom-button'
-        onClick={() => dispatch(addItem(item))}
-        inverted
-      >
+      <CollectionItemFooter>
+        <CollectionItemName>{name}</CollectionItemName>
+        <CollectionItemPrice>${price}</CollectionItemPrice>
+      </CollectionItemFooter>
+      <ExtStyledButton onClick={() => dispatch(addItem(item))} inverted>
         Add to Cart
       </ExtStyledButton>
-    </CollectionContainer>
+    </CollectionItemContainer>
   );
 };
 

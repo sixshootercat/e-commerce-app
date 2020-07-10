@@ -20,7 +20,7 @@ export const StyledButton = styled.button`
   justify-content: center;
   transition: 0.2s;
 
-  &:hover {
+  :hover {
     background-color: ${({ isGoogleSignIn, inverted }) =>
       isGoogleSignIn ? '#357ae8' : inverted ? 'black' : 'white'};
     color: ${({ inverted, isGoogleSignIn }) =>
