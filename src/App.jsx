@@ -23,7 +23,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(checkUserSession());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>

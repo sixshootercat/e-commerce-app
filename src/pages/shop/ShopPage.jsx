@@ -13,7 +13,7 @@ const ShopPage = () => {
 
   useEffect(() => {
     dispatch(fetchCollectionsStart());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
