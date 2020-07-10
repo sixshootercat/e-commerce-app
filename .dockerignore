@@ -3,3 +3,4 @@ build
 Dockerfile
 Dockerfile.prod
 .env
+yarn-lock
