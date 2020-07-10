@@ -1,7 +1,5 @@
-describe('App Component', () => {
+describe('testing App component', () => {
   it('renders correctly without crashing', () => {
-    let num1,
-      num2 = 2;
-    let result = num1 + num2;
+    expect(1).toEqual(1);
   });
 });

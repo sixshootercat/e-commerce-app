@@ -1,12 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import FormInput from 'components/form-input/FormInput';
 import CustomButton from 'components/custom-button/CustomButton';
 import { signUpStart } from 'redux/actions/userActions';
 
 import './sign-up.scss';
 
-const SignUp = (props) => {
+const SignUp = () => {
   const [userCreds, setUserCreds] = useState({
     email: '',
     displayName: '',
@@ -15,7 +16,6 @@ const SignUp = (props) => {
   });
 
   const dispatch = useDispatch();
-
   const inputEl = useRef();
 
   useEffect(() => {
@@ -24,9 +24,6 @@ const SignUp = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const { displayName, email, password, confirmPassword } = userCreds;
-
     dispatch(signUpStart({ email, password, displayName }));
 
     if (password !== confirmPassword) {
@@ -46,7 +43,7 @@ const SignUp = (props) => {
   return (
     <div className='sign-up'>
       <div className='title'>
-        <h2>I do not have an account</h2>
+        <h2>Sign Up</h2>
         <span style={{ fontSize: '18px' }}>
           Sign up with your email and password
         </span>
@@ -85,7 +82,24 @@ const SignUp = (props) => {
           label='Confirm Password'
           required
         />
-        <CustomButton type='submit'>SIGN UP</CustomButton>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <CustomButton type='submit'>SIGN UP</CustomButton>
+        </div>
+
+        <div className='sign-up-message'>
+          <span>
+            Already have an account?{' '}
+            <Link to='/signin'>
+              <strong>Sign in Here</strong>
+            </Link>
+          </span>
+        </div>
       </form>
     </div>
   );
