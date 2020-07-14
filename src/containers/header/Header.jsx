@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from 'assets/crown.svg';
 
-import CartIcon from 'components/cart-icon/CartIcon';
-import CartDropDown from 'components/cart-dropdown/CartDropDown';
+import CartIcon from 'containers/cart-icon/CartIcon';
+import CartDropDown from 'containers/cart-dropdown/CartDropDown';
 
 import { selectCurrentUser } from 'redux/selectors/userSelectors';
 import { selectCartHidden } from 'redux/selectors/cartSelectors';

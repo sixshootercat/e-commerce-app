@@ -5,7 +5,7 @@ import { selectCurrentUser } from 'redux/selectors/userSelectors';
 import { useSelector, useDispatch } from 'react-redux';
 import { checkUserSession } from 'redux/actions/userActions';
 
-import Header from 'components/header/Header';
+import Header from 'containers/header/Header';
 import Spinner from 'components/spinner/Spinner';
 import PageNotFound from 'components/page-not-found/PageNotFound';
 import ErrorBoundary from 'components/error-boundary/ErrorBoundary';

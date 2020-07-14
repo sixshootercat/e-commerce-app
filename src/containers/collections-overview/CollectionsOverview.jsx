@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { selectCollectionsForPreview } from 'redux/selectors/shopSelectors';
 
-import CollectionPreview from 'components/collection-preview/CollectionPreview';
+import CollectionPreview from 'containers/collection-preview/CollectionPreview';
 
 const CollectionsOverview = () => {
   const collections = useSelector(selectCollectionsForPreview);
