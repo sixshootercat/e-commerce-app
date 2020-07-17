@@ -10,12 +10,12 @@ import Spinner from 'components/spinner/Spinner';
 import PageNotFound from 'components/page-not-found/PageNotFound';
 import ErrorBoundary from 'components/error-boundary/ErrorBoundary';
 
-const HomePage = lazy(() => import('pages/home/HomePage'));
-const ShopPage = lazy(() => import('pages/shop/ShopPage'));
-const CheckOutPage = lazy(() => import('pages/checkout/CheckOutPage'));
-const ContactPage = lazy(() => import('pages/contact/ContactPage'));
-const SignInPage = lazy(() => import('pages/sign-in/SignInPage'));
-const SignUpPage = lazy(() => import('pages/sign-up/SignUpPage'));
+const HomePage = lazy(() => import('routes/home/HomePage'));
+const ShopPage = lazy(() => import('routes/shop/ShopPage'));
+const CheckOutPage = lazy(() => import('routes/checkout/CheckOutPage'));
+const ContactPage = lazy(() => import('routes/contact/ContactPage'));
+const SignInPage = lazy(() => import('routes/sign-in/SignInPage'));
+const SignUpPage = lazy(() => import('routes/sign-up/SignUpPage'));
 
 const App = () => {
   const currentUser = useSelector(selectCurrentUser);
