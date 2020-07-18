@@ -4,8 +4,12 @@ import { useDispatch } from 'react-redux';
 import FormInput from 'components/form-input/FormInput';
 import CustomButton from 'components/custom-button/CustomButton';
 import { googleSignInStart, emailSignInStart } from 'redux/actions/userActions';
-
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+import { toastNotification } from 'containers/sign-up/SignUp';
 import './sign-in.scss';
+
+toast.configure();
 
 const SignIn = () => {
   const [userCreds, setUserCreds] = useState({
@@ -23,6 +27,9 @@ const SignIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (password !== 'hey') {
+      toastNotification('Invalid Input');
+    }
     dispatch(emailSignInStart({ email, password }));
     setUserCreds({ ...userCreds, email: '', password: '' });
   };

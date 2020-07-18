@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Directory from 'components/directory/Directory';
+import Directory from 'containers/directory/Directory';
 
 const HomePage = () => {
   return (
