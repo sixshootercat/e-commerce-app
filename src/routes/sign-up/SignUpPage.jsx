@@ -1,12 +1,11 @@
 import React from 'react';
-
 import { Container } from './styles';
-import SignIn from 'components/sign-in/SignIn';
+import SignUp from 'containers/sign-up/SignUp';
 
 const SignInPage = () => {
   return (
     <Container>
-      <SignIn />
+      <SignUp />
     </Container>
   );
 };

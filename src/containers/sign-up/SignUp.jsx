@@ -4,8 +4,20 @@ import { Link } from 'react-router-dom';
 import FormInput from 'components/form-input/FormInput';
 import CustomButton from 'components/custom-button/CustomButton';
 import { signUpStart } from 'redux/actions/userActions';
-
 import './sign-up.scss';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+
+toast.configure();
+
+export const toastNotification = (msg) => {
+  toast.error(<p>{msg}</p>, {
+    position: toast.POSITION.BOTTOM_CENTER,
+    autoClose: 3500,
+    pauseOnHover: false,
+    hideProgressBar: true,
+  });
+};
 
 const SignUp = () => {
   const [userCreds, setUserCreds] = useState({
@@ -22,14 +34,13 @@ const SignUp = () => {
     inputEl.current.focus();
   }, []);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(signUpStart({ email, password, displayName }));
-
     if (password !== confirmPassword) {
-      alert("passwords don't match");
+      toastNotification('Passwords must match');
       return;
     }
+    dispatch(signUpStart({ email, password, displayName }));
   };
 
   const handleChange = (e) => {
