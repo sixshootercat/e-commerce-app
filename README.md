@@ -2,15 +2,23 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the root project directory, you can run:
 
 ### `yarn start`
 
-Runs the app in the development mode.<br />
+Runs the app in development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
+
+### `docker build -t crown-e-commerce:latest .`
+
+Builds docker image
+
+### `docker run -it -p 8000:80 crown-e-commerce:latest`
+
+Creates docker container and runs it. Dockerized app can be ready be opened in http://localhost:8000
 
 ### `yarn test`
 
