@@ -4,7 +4,7 @@ FROM mhart/alpine-node:11 AS builder
 WORKDIR /app
 
 COPY . .
-RUN yarn install react-scripts -g --silent
+RUN yarn global add react-scripts
 
 RUN yarn install
 RUN yarn run build
