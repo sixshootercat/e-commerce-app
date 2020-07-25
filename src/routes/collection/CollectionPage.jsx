@@ -5,9 +5,7 @@ import './collection.scss';
 import CollectionItem from 'components/collection-item/CollectionItem';
 
 const CollectionPage = ({ match }) => {
-  const collection = useSelector((state) =>
-    selectCollection(match.params.collectionId)(state)
-  );
+  const collection = useSelector(selectCollection(match.params.collectionId));
   const { title, items } = collection;
   return (
     <div className='collection-page'>
