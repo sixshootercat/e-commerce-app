@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { Route, useRouteMatch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { fetchCollectionsStart } from 'redux/actions/shopActions';
-import CollectionOverviewContainer from 'containers/CollectionOverviewContainer';
-import CollectionPageContainer from 'containers/CollectionPageContainer';
+import CollectionPage from 'routes/collection/CollectionPage';
+import CollectionsOverview from 'containers/collections-overview/CollectionsOverview';
 
 const ShopPage = () => {
   const match = useRouteMatch();
@@ -15,15 +15,8 @@ const ShopPage = () => {
 
   return (
     <>
-      <Route
-        exact
-        path={`${match.path}`}
-        component={CollectionOverviewContainer}
-      />
-      <Route
-        path={`${match.path}/:collectionId`}
-        component={CollectionPageContainer}
-      />
+      <Route exact path={`${match.path}`} component={CollectionsOverview} />
+      <Route path={`${match.path}/:collectionId`} component={CollectionPage} />
     </>
   );
 };
