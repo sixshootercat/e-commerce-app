@@ -25,10 +25,13 @@
     "styled-components": "^5.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "docker:build": "docker build -t crown-e-commerce:latest .",
+    "docker:run": "docker run -it -p 8000:80 crown-e-commerce:latest"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,6 +49,7 @@
     ]
   },
   "devDependencies": {
-    "react-test-renderer": "^16.13.1"
+    "react-test-renderer": "^16.13.1",
+    "serve": "^11.3.2"
   }
 }

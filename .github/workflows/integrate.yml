@@ -2,7 +2,11 @@ name: Continuous Integration
 
 on:
   pull_request:
-    branches: [develop]
+    branches:
+      - develop
+  push:
+    branches:
+      - develop
 
 jobs:
   test_pull_request:
@@ -15,4 +19,4 @@ jobs:
           node-version: 12
       - run: yarn install
       - run: yarn test
-      - run: yarn run build
+      - run: yarn build
