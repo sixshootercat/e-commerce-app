@@ -28,4 +28,8 @@ export const StyledButton = styled.button`
     border: ${({ isGoogleSignIn }) =>
       isGoogleSignIn ? 'none' : '1px solid black'};
   }
+
+  :focus {
+    outline: none;
+  }
 `;
