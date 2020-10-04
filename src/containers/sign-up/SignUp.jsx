@@ -55,11 +55,9 @@ const SignUp = () => {
     <div className='sign-up'>
       <div className='title'>
         <h2>Sign Up</h2>
-        <span style={{ fontSize: '18px' }}>
-          Sign up with your email and password
-        </span>
+        <span>Sign up with your email and password</span>
       </div>
-      <form className='sign-up-form' onSubmit={handleSubmit}>
+      <form className='sign-up-form' onSubmit={handleSubmit} noValidate>
         <FormInput
           ref={inputEl}
           type='text'
@@ -93,15 +91,8 @@ const SignUp = () => {
           label='Confirm Password'
           required
         />
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <CustomButton type='submit'>SIGN UP</CustomButton>
-        </div>
+
+        <CustomButton type='submit'>SIGN UP</CustomButton>
 
         <div className='sign-up-message'>
           <span>
