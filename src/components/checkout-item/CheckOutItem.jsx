@@ -5,7 +5,6 @@ import {
   addItem,
   removeItem,
 } from 'redux/actions/cartActions';
-
 import './checkout-item.scss';
 
 const CheckOutItem = ({ cartItem }) => {

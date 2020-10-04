@@ -25,13 +25,13 @@ const SignIn = () => {
     inputEl.current.focus();
   }, []);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (password !== 'hey') {
-      toastNotification('Invalid Input');
+      toastNotification('User not found');
     }
     dispatch(emailSignInStart({ email, password }));
-    setUserCreds({ ...userCreds, email: '', password: '' });
+    setUserCreds({ email: '', password: '' });
   };
 
   const handleChange = (e) => {
@@ -45,12 +45,10 @@ const SignIn = () => {
     <div className='sign-in'>
       <div className='title'>
         <h2>Sign In</h2>
-        <span style={{ fontSize: '18px' }}>
-          Sign in with your email and password
-        </span>
+        <span>Sign in with your email and password</span>
       </div>
 
-      <form onSubmit={handleSubmit}>
+      <form className='sign-in-form' onSubmit={handleSubmit} noValidate>
         <FormInput
           ref={inputEl}
           name='email'
