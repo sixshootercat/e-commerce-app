@@ -3,11 +3,6 @@
   flex-direction: column;
   width: 380px;
 
-  .sign-up-form {
-    display: flex;
-    flex-direction: column;
-  }
-
   .sign-up-message {
     display: flex;
     justify-content: center;
@@ -27,7 +22,6 @@
 
     :last-child {
       margin-bottom: 1rem;
-      font-size: 18px;
     }
   }
 }

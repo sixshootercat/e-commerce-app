@@ -14,7 +14,7 @@ const FormInput = React.forwardRef(
           onChange={handleChange}
           {...otherProps}
         />
-        {label && (
+        {label ? (
           <label
             className={`${
               otherProps.value.length ? "shrink" : ""
@@ -22,7 +22,7 @@ const FormInput = React.forwardRef(
           >
             {label}
           </label>
-        )}
+        ) : null}
       </div>
     );
   }

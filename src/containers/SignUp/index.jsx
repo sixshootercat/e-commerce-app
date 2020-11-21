@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Input } from "components";
-import { CustomButton } from "components";
+import { CustomButton, FormInput } from "components";
 import { signUpStart } from "redux/actions/userActions";
 import "./sign-up.scss";
 import "react-toastify/dist/ReactToastify.css";
@@ -55,10 +55,12 @@ const SignUp = () => {
     <div className="sign-up">
       <div className="title">
         <h2>Sign Up</h2>
-        <span>Sign up with your email and password</span>
+        <span style={{ fontSize: "18px" }}>
+          Sign up with your email and password
+        </span>
       </div>
-      <form className="sign-up-form" onSubmit={handleSubmit} noValidate>
-        <Input
+      <form className="sign-up-form" onSubmit={handleSubmit}>
+        <FormInput
           ref={inputEl}
           type="text"
           name="displayName"

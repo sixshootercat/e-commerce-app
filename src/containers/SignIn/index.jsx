@@ -25,7 +25,7 @@ const SignIn = () => {
     inputEl.current.focus();
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== "hey") {
       toastNotification("User not found");
@@ -45,10 +45,12 @@ const SignIn = () => {
     <div className="sign-in">
       <div className="title">
         <h2>Sign In</h2>
-        <span>Sign in with your email and password</span>
+        <span style={{ fontSize: "18px" }}>
+          Sign in with your email and password
+        </span>
       </div>
 
-      <form className="sign-in-form" onSubmit={handleSubmit} noValidate>
+      <form onSubmit={handleSubmit}>
         <FormInput
           ref={inputEl}
           name="email"
