@@ -1,4 +1,4 @@
-import { userActionTypes } from 'redux/action-types/userActionTypes';
+import { userActionTypes } from "redux/action-types/userActionTypes";
 
 export const googleSignInStart = () => ({
   type: userActionTypes.GOOGLE_SIGN_IN_START,

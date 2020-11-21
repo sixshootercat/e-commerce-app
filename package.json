@@ -3,13 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.0.4",
-    "@testing-library/user-event": "^12.1.7",
-    "enzyme-adapter-react-16": "^1.15.5",
     "firebase": "^7.22.0",
     "node-sass": "^4.14.1",
-    "npm-check-updates": "^9.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
@@ -25,10 +20,12 @@
     "styled-components": "^5.2.0"
   },
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "serve -s build",
+    "format": "prettier-eslint --write \"{,!(node_modules)/**/}*.{js,jsx}\"",
+    "start": "react-scripts start",
+    "serve": "serve -s build",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test:watch": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "docker:build": "docker build -t crown-e-commerce:latest .",
     "docker:run": "docker run -it -p 8000:80 crown-e-commerce:latest"
@@ -49,6 +46,18 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.0.4",
+    "@testing-library/user-event": "^12.1.7",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-testing-library": "^3.10.0",
+    "jest-dom": "^4.0.0",
+    "npm-check-updates": "^9.0.3",
+    "prettier": "^2.1.2",
+    "prettier-eslint-cli": "^5.0.0",
     "react-test-renderer": "^16.13.1",
     "serve": "^11.3.2"
   }

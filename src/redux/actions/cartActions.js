@@ -1,4 +1,4 @@
-import { cartActionTypes } from 'redux/action-types/cartActionTypes';
+import { cartActionTypes } from "redux/action-types/cartActionTypes";
 
 export const toggleCartHidden = () => ({
   type: cartActionTypes.TOGGLE_CART_HIDDEN,
