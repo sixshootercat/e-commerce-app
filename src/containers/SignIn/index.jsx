@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import FormInput from "components/Input";
+import FormInput from "components/FormInput";
 import { CustomButton } from "components";
 import { googleSignInStart, emailSignInStart } from "redux/actions/userActions";
 import "react-toastify/dist/ReactToastify.css";

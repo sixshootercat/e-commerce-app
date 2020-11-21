@@ -3,7 +3,7 @@ import CartItem from "./CartItem";
 import CheckoutItem from "./CheckoutItem";
 import CollectionItem from "./CollectionItem";
 import ErrorBoundary from "./ErrorBoundary";
-import Input from "./Input";
+import FormInput from "./FormInput";
 import MenuItem from "./MenuItem";
 import NotFound from "./NotFound";
 import Spinner from "./Spinner";
@@ -15,7 +15,7 @@ export {
   CheckoutItem,
   CollectionItem,
   ErrorBoundary,
-  Input,
+  FormInput,
   MenuItem,
   NotFound,
   Spinner,

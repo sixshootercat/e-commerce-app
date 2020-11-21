@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { Input } from "components";
 import { CustomButton, FormInput } from "components";
 import { signUpStart } from "redux/actions/userActions";
 import "./sign-up.scss";
@@ -69,7 +68,7 @@ const SignUp = () => {
           label="Name"
           required
         />
-        <Input
+        <FormInput
           type="email"
           name="email"
           value={email}
@@ -77,7 +76,7 @@ const SignUp = () => {
           label="Email"
           required
         />
-        <Input
+        <FormInput
           type="password"
           name="password"
           value={password}
@@ -85,7 +84,7 @@ const SignUp = () => {
           label="Password"
           required
         />
-        <Input
+        <FormInput
           type="password"
           name="confirmPassword"
           value={confirmPassword}
