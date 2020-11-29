@@ -25,7 +25,7 @@ const App = () => {
     dispatch(checkUserSession());
   }, [dispatch]);
 
-  console.log('testing');
+  console.log('testing2');
 
   return (
     <>
