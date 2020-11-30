@@ -3,7 +3,7 @@
 exports[`renders correctly without crashing 1`] = `
 <DocumentFragment>
   <button
-    class="sc-bdnylx dSMHfp"
+    class="sc-bdfBwQ ebgsqd"
   />
 </DocumentFragment>
 `;

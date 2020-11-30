@@ -6,9 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { checkUserSession } from "redux/actions/userActions";
 
 import { Header } from "containers";
-import { Spinner } from "components";
-import { NotFound } from "components";
-import { ErrorBoundary } from "components";
+import { Spinner, NotFound, ErrorBoundary } from "components";
 
 const HomePage = lazy(() => import("pages/Home"));
 const ShopPage = lazy(() => import("pages/Shop"));
@@ -24,8 +22,6 @@ const App = () => {
   useEffect(() => {
     dispatch(checkUserSession());
   }, [dispatch]);
-
-  console.log('testing');
 
   return (
     <>
