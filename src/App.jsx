@@ -25,8 +25,6 @@ const App = () => {
     dispatch(checkUserSession());
   }, [dispatch]);
 
-  console.log('testing2');
-
   return (
     <>
       <Header />
