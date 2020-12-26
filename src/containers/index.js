@@ -1,6 +1,6 @@
 import CartDropdown from "./CartDropdown";
 import CartIcon from "./CartIcon";
-import CollectionPreview from "./CollectionPreview";
+import CollectionPreview from "../components/CollectionPreview";
 import CollectionsOverview from "./CollectionsOverview";
 import Directory from "./Directory";
 import Header from "./Header";

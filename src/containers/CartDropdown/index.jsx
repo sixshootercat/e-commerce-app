@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import CustomButton from "components/CustomButton";
-import CartItem from "components/CartItem";
+import CartItem from "containers/CartItem";
 import { toggleCartHidden, removeItem } from "redux/actions/cartActions";
 import { selectCartItems } from "redux/selectors/cartSelectors";
 

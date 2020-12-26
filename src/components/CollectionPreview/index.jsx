@@ -1,5 +1,5 @@
 import React from "react";
-import CollectionItem from "components/CollectionItem";
+import CollectionItem from "containers/CollectionItem";
 import { CollectionItemPreview, Container, CollectionTitle } from "./styles";
 
 const CollectionPreview = ({ title, items }) => {

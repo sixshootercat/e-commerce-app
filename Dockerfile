@@ -1,19 +1,19 @@
 # pull official base image
-FROM mhart/alpine-node:11 AS builder
+FROM node:13.12.0-alpine
 
+# set working directory
 WORKDIR /app
 
-COPY . .
-RUN yarn global add react-scripts
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
 
-RUN yarn install
-RUN yarn run build
+# install app dependencies
+COPY package.json ./
+COPY yarn.lock ./
+RUN npm install react-scripts@3.4.1 -g --silent
 
-FROM mhart/alpine-node
+# add app
+COPY . ./
 
-RUN yarn global add serve
-
-WORKDIR /app
-
-COPY --from=builder /app/build .
-CMD ["serve", "-n", "-p", "80", "-s", "."]doc
+# yarn app
+CMD ["yarn", "start"]
