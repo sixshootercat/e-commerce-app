@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly without crashing 1`] = `
+exports[`<CustomButton /> renders correctly without crashing 1`] = `
 <DocumentFragment>
   <button
     class="sc-bdfBwQ ebgsqd"

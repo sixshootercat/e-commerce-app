@@ -1,7 +1,6 @@
 /* eslint-disable react/display-name */
 import React from "react";
 import Proptypes from "prop-types";
-
 import "./form-input.scss";
 
 const FormInput = React.forwardRef(

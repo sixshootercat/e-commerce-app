@@ -4,8 +4,15 @@ import { CustomButton } from "components";
 
 afterEach(cleanup);
 
-it("renders correctly without crashing", () => {
-  const { asFragment } = render(<CustomButton />);
+describe("<CustomButton />", () => {
+  it("renders correctly without crashing", () => {
+    const { asFragment } = render(<CustomButton />);
 
-  expect(asFragment()).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  it("renders button children correctly", () => {
+    const { getByText } = render(<CustomButton>Whatever</CustomButton>);
+    getByText(/Whatever/i);
+  });
 });
