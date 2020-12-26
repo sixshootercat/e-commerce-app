@@ -7,7 +7,7 @@ import {
 } from "redux/selectors/shopSelectors";
 import Spinner from "components/Spinner";
 
-import CollectionPreview from "containers/CollectionPreview";
+import CollectionPreview from "components/CollectionPreview";
 
 const CollectionsOverview = () => {
   const collections = useSelector(selectCollectionsForPreview);
